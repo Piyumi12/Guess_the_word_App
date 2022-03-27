@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:guess_the_word/specialNote/note_list.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/form/notes_form_bloc.dart';
+import '../bloc/list/notes_list_bloc.dart';
+import '../bloc/list/notes_list_event.dart';
+import '../repository/notes_repository.dart';
+import '../ui/notes_list_screen.dart';
+import '../ui/theme.dart';
 
 class SpecialNote extends StatelessWidget {
   static const routeName = '/specialNote';
@@ -7,34 +14,22 @@ class SpecialNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        textTheme: const TextTheme(
-          headline5: TextStyle(
-              fontFamily: 'Sans',
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 24),
-          bodyText2: TextStyle(
-              fontFamily: 'Sans',
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 20),
-          bodyText1: TextStyle(
-              fontFamily: 'Sans',
-              fontWeight: FontWeight.normal,
-              color: Colors.black,
-              fontSize: 18),
-          subtitle2: TextStyle(
-              fontFamily: 'Sans',
-              fontWeight: FontWeight.normal,
-              color: Colors.black,
-              fontSize: 14),
-        ),
-      ),
-      home: NoteList(),
+    return Scaffold(
+        body: MultiBlocProvider(
+          providers: [
+            BlocProvider<NotesListBloc>(
+              create: (context) {
+                return NotesListBloc(noteRepository: NotesRepository())..add(GetNotes());
+              },
+            ),
+            BlocProvider<NotesFormBloc>(
+              create: (context) {
+                return NotesFormBloc(noteRepository: NotesRepository());
+              },
+            )
+          ],
+          child: NotesListScreen(),
+        )
     );
   }
 }
