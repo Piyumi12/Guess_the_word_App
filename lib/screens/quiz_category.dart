@@ -2,8 +2,9 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:guess_the_word/common/theme_helper.dart';
+import 'package:guess_the_word/quizPages/quizPage.dart';
 
-import '../specialNote/SpecialNote.dart';
+import '../specialNote/specialNote.dart';
 import '../widgets/disco_button.dart';
 
 class QuizCategoryScreen extends StatefulWidget {
@@ -103,7 +104,7 @@ List<Widget> homeScreenButtons(BuildContext context) {
     ),
     DiscoButton(
       onPressed: () {
-        Navigator.pushNamed(context, QuizCategoryScreen.routeName);
+        Navigator.pushNamed(context, QuizPage.routeName);
       },
       child: Text(
         "Biology",
