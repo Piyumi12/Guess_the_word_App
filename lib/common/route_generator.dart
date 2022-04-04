@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:guess_the_word/quizPages/quizPage.dart';
 import 'package:guess_the_word/screens/home_screen.dart';
 import 'package:guess_the_word/screens/quiz_category.dart';
 import 'package:guess_the_word/screens/splash_screen.dart';
-
-import '../specialNote/SpecialNote.dart';
+import 'package:guess_the_word/specialNote/specialNote.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -18,6 +18,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => QuizCategoryScreen());
       case SpecialNote.routeName:
         return MaterialPageRoute(builder: (_) => SpecialNote());
+      case QuizPage.routeName:
+        return MaterialPageRoute(builder: (_) => QuizPage());
 
       default:
         return _errorRoute();
