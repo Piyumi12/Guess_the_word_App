@@ -3,7 +3,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:guess_the_word/common/theme_helper.dart';
 import 'package:guess_the_word/quizPages/quizPage.dart';
-
+import 'package:guess_the_word/quizPages/quizPhysicsPage.dart';
 import '../specialNote/specialNote.dart';
 import '../widgets/disco_button.dart';
 
@@ -74,7 +74,9 @@ List<Widget> homeScreenButtons(BuildContext context) {
     ),
     DiscoButton(
       onPressed: () {
-        Navigator.pushNamed(context, QuizCategoryScreen.routeName);
+        Navigator.push(
+              context, MaterialPageRoute(builder: (context) => QuizPhysicsPage()));
+
       },
       child: Text(
         "Physics",
