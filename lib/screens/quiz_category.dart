@@ -1,7 +1,13 @@
 import 'dart:core';
-
+import 'package:guess_the_word/screens/chemistry_home.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:guess_the_word/common/theme_helper.dart';
+import 'package:guess_the_word/screens/chemistry_question.dart';
+import 'package:guess_the_word/screens/note_list_screen.dart';
+import 'package:guess_the_word/state/state_manager.dart';
+import 'package:guess_the_word/database/category_provider.dart';
+
 
 import '../specialNote/SpecialNote.dart';
 import '../widgets/disco_button.dart';
@@ -9,6 +15,7 @@ import '../widgets/disco_button.dart';
 class QuizCategoryScreen extends StatefulWidget {
   static const routeName = '/quizCategory';
   const QuizCategoryScreen({Key key}) : super(key: key);
+  //Category category = new Category();
 
   @override
   _QuizCategoryScreenState createState() => _QuizCategoryScreenState();
@@ -18,6 +25,8 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
 
 @override
 Widget build(BuildContext context) {
+
+
   return SafeArea(
     child: Scaffold(
       body: Container(
@@ -88,10 +97,25 @@ List<Widget> homeScreenButtons(BuildContext context) {
     ),
     DiscoButton(
       onPressed: () {
-        Navigator.pushNamed(context, QuizCategoryScreen.routeName);
+        Navigator.pushNamed(context, ChemistryHomePage.routeName);
       },
       child: Text(
         "Chemistry",
+        style: TextStyle(
+          fontSize: 30,
+          color: ThemeHelper.primaryColor,
+        ),
+      ),
+    ),
+    Container(
+      padding: const EdgeInsets.only(top: 20.0),
+    ),
+    DiscoButton(
+      onPressed: () {
+        Navigator.pushNamed(context, ShortNoteListScreen.routeName);
+      },
+      child: Text(
+        "Short Notes",
         style: TextStyle(
           fontSize: 30,
           color: ThemeHelper.primaryColor,
