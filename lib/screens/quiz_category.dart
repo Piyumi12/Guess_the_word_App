@@ -5,6 +5,8 @@ import 'package:guess_the_word/common/theme_helper.dart';
 import 'package:guess_the_word/quizPages/quizPage.dart';
 
 import '../specialNote/specialNote.dart';
+import '../feedback/Feedback.dart';
+import '../geography/geography_category.dart';
 import '../widgets/disco_button.dart';
 
 class QuizCategoryScreen extends StatefulWidget {
@@ -59,7 +61,7 @@ List<Widget> homeScreenButtons(BuildContext context) {
   return [
     DiscoButton(
       onPressed: () {
-        Navigator.pushNamed(context, QuizCategoryScreen.routeName);
+        Navigator.pushNamed(context, GeographyCategoryScreen.routeName);
       },
       child: Text(
         "Geography",
@@ -123,6 +125,21 @@ List<Widget> homeScreenButtons(BuildContext context) {
       },
       child: Text(
         "Special Note",
+        style: TextStyle(
+          fontSize: 30,
+          color: ThemeHelper.primaryColor,
+        ),
+      ),
+    ),
+    Container(
+      padding: const EdgeInsets.only(top: 20.0),
+    ),
+    DiscoButton(
+      onPressed: () {
+        Navigator.pushNamed(context, FeedbackScreen.routeName);
+      },
+      child: Text(
+        "Feedback",
         style: TextStyle(
           fontSize: 30,
           color: ThemeHelper.primaryColor,
