@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "975599189023",
+    "firebase_url": "https://ctse-quizapp-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ctse-quizapp",
+    "storage_bucket": "ctse-quizapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975599189023:android:6d849e68ae9b1b8d8fe92a",
+        "android_client_info": {
+          "package_name": "com.example.guess_the_word"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975599189023-lj99rvsjjdq8go4k1ja6mt991gga44bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5z8GVJLhMgYW-ziDtpuIA5wKKbDUzcM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975599189023-lj99rvsjjdq8go4k1ja6mt991gga44bq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
